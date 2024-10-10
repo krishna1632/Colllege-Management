@@ -2,9 +2,13 @@
 
 
 @section('content')
-    <h1 class="mt-4">Dashboard</h1>
+    <h1 class="mt-4 " style="font-size:25px">Welcome,
+    <span class="navbar-text me-3 mt-7 text-primary " style="font-size:35px">
+                {{ Auth::user()->name }}
+            </span>
+    </h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <!-- <li class="breadcrumb-item active">Dashboard</li> -->
                         </ol>
                         <div class="row">
                             <div class="container col-md-4">
