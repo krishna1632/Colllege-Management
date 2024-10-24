@@ -7,8 +7,6 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FacultyController;
 use App\Http\Controllers\Admin\StudyMaterialController;
 use App\Http\Controllers\Admin\EventController;
-use App\Http\Controllers\Admin\QuizController;
-use App\Http\Controllers\Admin\QuestionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,17 +29,7 @@ Route::middleware(['auth', 'adminMiddleware'])->prefix('admin')->as('admin.')->g
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('faculty', FacultyController::class);
     Route::resource('study_materials', StudyMaterialController::class);
-    Route::resource('quizzes', QuizController::class);
 
-
-
-    Route::get('/quizzes/{quiz}/questions', [QuestionController::class, 'index'])->name('questions.index');
-    Route::get('/quizzes/{quiz}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
-    Route::post('/quizzes/{quiz}/questions', [QuestionController::class, 'store'])->name('questions.store');
-    Route::get('/questions/{id}/edit', [QuestionController::class, 'edit'])->name('questions.edit');
-    Route::put('/questions/{id}', [QuestionController::class, 'update'])->name('questions.update');
-    Route::delete('/questions/{id}', [QuestionController::class, 'destroy'])->name('questions.destroy');
-    Route::post('/quizzes/{quiz}/finalSubmit', [QuizController::class, 'finalSubmit'])->name('quizzes.finalSubmit');
 });
 
 // Event routes for admin

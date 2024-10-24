@@ -43,8 +43,8 @@
             <div class="collapse" id="collapseSocieties" aria-labelledby="headingOne"
                 data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="{{ url('admin/quizzes') }}">Create Quiz</a>
-                    <a class="nav-link" href="{{ url('admin/societies') }}">Create Quiz Repoarts</a>
+                    <a class="nav-link" href="{{ url('#') }}">Create Quiz</a>
+                    <a class="nav-link" href="{{ url('#') }}">Create Quiz Repoarts</a>
                 </nav>
             </div>
 
